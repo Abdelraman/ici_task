@@ -19,7 +19,7 @@ ICIGAI backend task
 - Registered users click on attach image button with the camera icon, it opens a modal with drop zone with the ability to upload image.
 - Registered user can choose images from their gallery and click confirm.
 - Once image confirmed it is attached automatically to the post or reply.
-- Registered can delete the uploaded images
+- Registered users can delete their uploaded images
 - Each post will have the username, attached image, and the date of the post or reply.
 - Most of the work done using javascript, kindly check the custom folder inside public/js/custom.
 - Kindly check the database schema and relations from the models folder and migration folder.
