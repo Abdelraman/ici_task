@@ -10,14 +10,14 @@ ICIGAI backend task
 
 ## Documentation
 
-- The welcome screen allows registered users or guests to write posts
-- Users or guests can reply on their own posts or other posts
-- Multi level replies up to 5 levels as required
-- Guest user's name will be anonymous
-- Guest users can attach image from their own computer
-- Registered users can attach images from their gallery
-- Registered users click on attach image button with the camera icon, it opens a modal with drop zone with the ability to upload multiple images
-- Registered user can choose images from their gallery and click confirm
-- Once image confirmed it is attached automatically to the post or reply
-- each post will have the username, attached image, and the date of the post or reply
-- kindly check the database schema and relations from the models folder and migration folder
+- The welcome screen allows registered users or guests to write posts.
+- Users or guests can reply on their own posts or other's posts.
+- Multi level replies up to 5 levels as required.
+- Guest user's name will be anonymous.
+- Guest users can attach image from their own computer.
+- Registered users can attach images from their gallery.
+- Registered users click on attach image button with the camera icon, it opens a modal with drop zone with the ability to upload image.
+- Registered user can choose images from their gallery and click confirm.
+- Once image confirmed it is attached automatically to the post or reply.
+- Each post will have the username, attached image, and the date of the post or reply.
+- Kindly check the database schema and relations from the models folder and migration folder.
