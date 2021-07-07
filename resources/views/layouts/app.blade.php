@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="{{ asset('plugins/dropzone/dropzone.min.css') }}">
 
     <style>
+        .selected-image {
+            border: 5px solid #3490dc;
+        }
+
         .user-images-container {
             position: relative;
         }

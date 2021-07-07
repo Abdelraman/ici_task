@@ -5,7 +5,7 @@
 
         <div class="col-md-3" style="margin-top: 10px" id="{{ $image->id }}">
             <div class="user-images-container">
-                <img src="{{ $image->image_path }}" class="img-thumbnail" alt=""/>
+                <img src="{{ $image->image_path }}" data-id="{{ $image->id }}" class="img-thumbnail user-image" alt=""/>
                 <div class="overlay">
                     <button class="btn btn-danger btn-sm delete-user-image-btn"
                             data-id="{{ $image->id }}"
@@ -19,6 +19,14 @@
 
     @endforeach
 </div>
+
+<button id="confirm-user-image-selection"
+        class="btn btn-primary btn-block my-3"
+        style="display: none"
+        data-image-id=""
+>
+    <i class="fa fa-check"></i> @lang('site.confirm_selection')
+</button>
 
 <script>
 
@@ -42,7 +50,7 @@
             let html = `
                 <div class="col-md-3" style="margin-top: 10px" id="${image.id}">
                     <div class="user-images-container">
-                        <img src="${image.image_path}" class="img-thumbnail" alt=""/>
+                        <img src="${image.image_path}" data-id="${image.id}" class="img-thumbnail user-image" alt=""/>
                         <div class="overlay">
                             <button class="btn btn-danger btn-sm delete-user-image-btn" data-id="${image.id}" data-url="/user_images/${image.id}">
                                 <i class="fa fa-trash"></i> ${deleteText}

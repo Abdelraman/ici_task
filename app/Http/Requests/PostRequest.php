@@ -28,7 +28,7 @@ class PostRequest extends FormRequest
             'parent_id' => 'sometimes|nullable',
             'text' => 'required',
             'image' => 'sometimes|nullable',
-            'image_id' => 'sometimes|nullable',
+            'user_image_id' => 'sometimes|nullable',
         ];
 
     }//end of rules

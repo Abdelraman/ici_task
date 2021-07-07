@@ -16,6 +16,7 @@
                     </div>
 
                     <input type="file" name="image" style="display: none">
+                    <input type="hidden" name="user_image_id">
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> @lang('site.add')</button>

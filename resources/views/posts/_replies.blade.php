@@ -28,11 +28,18 @@
                     <input type="hidden" name="parent_id" value="{{ $reply->id }}">
                     <input type="text" name="text" class="form-control" id="" required>
                     <input type="file" name="image" style="display: none">
+                    <input type="hidden" name="user_image_id">
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> @lang('site.add')</button>
-                    <button class="btn btn-primary btn-sm attach-image-btn" data-user-id="{{ auth()->user() ? auth()->user()->id : '' }}"><i class="fa fa-camera"></i> @lang('posts.attach_image')</button>
+                    <button class="btn btn-primary btn-sm attach-image-btn"
+                            data-user-id="{{ auth()->user() ? auth()->user()->id : '' }}"
+                            data-images-url="{{ route('user_images.create') }}"
+                    >
+                        <i class="fa fa-camera"></i>
+                        @lang('posts.attach_image')
+                    </button>
                 </div>
             </form>
 

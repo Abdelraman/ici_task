@@ -10,20 +10,20 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['parent_id', 'user_id', 'image_id', 'image', 'text'];
+    protected $fillable = ['parent_id', 'user_id', 'user_image_id', 'image', 'text'];
     protected $appends = ['has_image', 'image_path'];
 
     //attr
     public function getHasImageAttribute()
     {
-        return $this->image != null || $this->image_id != null;
+        return $this->image != null || $this->user_image_id != null;
 
     }// end of hasImage
 
     public function getImagePathAttribute()
     {
-        if ($this->image_id) {
-
+        if ($this->user_image_id) {
+            return $this->userImage->image_path;
         }
 
         return Storage::url('uploads/' . $this->image);
@@ -44,6 +44,12 @@ class Post extends Model
         return $this->belongsTo(User::class);
 
     }// end of user
+
+    public function userImage()
+    {
+        return $this->belongsTo(UserImage::class);
+
+    }// end of userImage
 
     //fun
     public function hasReplies()

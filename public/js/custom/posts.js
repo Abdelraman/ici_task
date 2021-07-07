@@ -1,5 +1,7 @@
 $(function () {
 
+    let post;
+
     $('#store-post-form').on('submit', function (e) {
         e.preventDefault();
 
@@ -76,6 +78,8 @@ $(function () {
 
         if (user) {
 
+            post = $(this)
+
             $('.modal').modal('show');
             $.ajax({
                 url: url,
@@ -109,5 +113,27 @@ $(function () {
 
         });//end of ajax call
     })
+
+    $(document).on('click', '.user-image', function () {
+
+        $('.user-image').removeClass('selected-image')
+        $(this).addClass('selected-image');
+        
+        let imageId = $(this).data('id');
+        $('#confirm-user-image-selection').data('imageId', imageId);
+        $('#confirm-user-image-selection').show();
+
+
+    })
+
+    $(document).on('click', '#confirm-user-image-selection', function (e) {
+        e.preventDefault();
+
+        let imageId = $(this).data('imageId');
+        $('.modal').modal('hide');
+        post.parentsUntil('.media').find('input[name="user_image_id"]:first').val(imageId);
+
+
+    });
 
 });//end of document ready
