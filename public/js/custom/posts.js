@@ -102,6 +102,8 @@ $(function () {
 
         $('#' + imageId).remove();
 
+        $('#confirm-user-image-selection').hide();
+        
         $.ajax({
             url: url,
             method: 'post',
@@ -118,7 +120,7 @@ $(function () {
 
         $('.user-image').removeClass('selected-image')
         $(this).addClass('selected-image');
-        
+
         let imageId = $(this).data('id');
         $('#confirm-user-image-selection').data('imageId', imageId);
         $('#confirm-user-image-selection').show();
